@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/normlize.css" />
+    <link rel="stylesheet" href="../../css/commun_file.css" />
+    <link rel="stylesheet" href="../../css/etudiants_style_page/style.css" />
+</head>
+
+<body>
+    <div class="gradient-background">
+        <div class="white-background">
+            <div class="h3">
+                <h3>Formulaire de Bulletin</h3>
+            </div>
+            <form>
+                <div class="input-group">
+                    <label>Numero : </label>
+                    <input id="numero" value="" type="number" name="numero" placeholder="Enter numero d'utilisateur" />
+                    <div class="recherche">
+                        <input type="button" onclick="rechercheEtudiant()" id="recherche" value="Recherche" />
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Civilite :</label>
+                    <div class="civilite">
+                        <input type="radio" checked name="civilite" id="Monsieur" value="Monsieur" />
+                        <label>Monsieur</label>
+                        <input type="radio" name="civilite" id="Madame" value="Madame" />
+                        <label>Madame</label>
+                        <input type="radio" name="civilite" id="Mademoiselle" value="Mademoiselle" />
+                        <label>Mademoiselle</label>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Nom / Prenom :</label>
+                    <input type="text" placeholder="Saisiz votre nom et prenom" required id="nom-prenom" name="nom-prenom" />
+                </div>
+
+                <div class="input-group">
+                    <label>Filière :</label>
+                    <select id="filiere" name="filiere">
+              <option value="tc">TC</option>
+              <option value="2sc">2 SC</option>
+              <option value="3isil">3 ISIL</option>
+              <option value="3si">3 SI</option>
+              <option value="m1">M1</option>
+              <option value="m2isi">M2ISI</option>
+              <option value="m2wic">M2WIC</option>
+              <option value="m2rssi">M2RSSI</option>
+              <option value="1ing">1ING</option>
+              <option value="2ing">2ING</option>
+            </select>
+                </div>
+                <div class="input-group">
+                    <label>Module :</label>
+                    <select id="module" name="module">
+              <option value="bdd">Base de donnees</option>
+              <option value="architecture">Architecture</option>
+              <option value="algorithme">Algorithme</option>
+              <option value="paw">Programmation Avances Web</option>
+            </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Code module:</label>
+                    <input type="text" placeholder="Saisiz votre code module" required id="code-module" name="code-module" />
+                </div>
+                <div class="input-group">
+                    <label>coefficient : </label>
+                    <input id="coefficient" value="" type="number" name="coefficient" placeholder="Enter coefficient" />
+                </div>
+
+                <div class="input-group">
+                    <label>Note : </label>
+                    <input type="text" placeholder="Saisiz votre la note" required id="note" name="note" />
+
+                </div>
+
+                <div class="bottom-elements">
+                    <div class="deleted-account-message" hidden>
+                        <p>Utilisateur non trouvé !</p>
+                    </div>
+                    <div class="affichage-list">
+                        <button type="submit" name="enregistrer-etudiant">
+                Enregistrer
+              </button>
+                        <button type="submit" name="modifier-etudiant">Modifier</button>
+                        <button type="submit" name="supprimer-etudiant">Supprimer</button>
+
+                    </div>
+                </div>
+
+                <div class="img">
+                    <img height="200" width="200" style="background-size: cover" id="selectedImage" alt="ajouter une photo" src="../../images/person.png" />
+                    <input class="image-input" type="file" id="image-input" name="image-input" accept="image/*" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

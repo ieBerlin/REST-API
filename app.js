@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
-const enseignantsRoute = require('./routes/enseignants');
 const etudiantsRoute = require('./routes/etudiants');
+const enseignantsRoute = require('./routes/enseignants');
 const moduleRoute = require('./routes/modules');
-
+const bulletinRoute = require('./routes/bulletins');
 const port = 3000;
 
 //  middlewares:
@@ -14,6 +14,8 @@ app.use(express.json());
 app.use('/api/enseignant', enseignantsRoute)
 app.use('/api/etudiant', etudiantsRoute)
 app.use('/api/module', moduleRoute)
+app.use('/api/bulletin', bulletinRoute)
+
 
 
 // start app
