@@ -1,0 +1,27 @@
+:root {
+    --main-color: rgba(81, 45, 207, 255);
+    --primary-color: rgba(18, 159, 213, 255);
+}
+
+.buttons {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons a {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: var(--main-color);
+    font-size: 30px;
+    color: white;
+    border-radius: 20px;
+    transition: 0.5s;
+    text-decoration: none;
+    display: block;
+}
+
+.buttons a:hover {
+    background-color: var(--primary-color);
+}

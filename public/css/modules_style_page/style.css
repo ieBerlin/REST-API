@@ -1,0 +1,83 @@
+:root {
+    --main-color: rgba(81, 45, 207, 255);
+    --primary-color: rgba(18, 159, 213, 255);
+}
+
+.input-group {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    position: relative;
+}
+
+.input-group label {
+    margin-left: 20px;
+    flex-basis: 14%;
+}
+
+.input-group input,
+.input-group textarea {
+    flex-basis: 30%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid #999;
+    color: #333;
+    font-size: 16px;
+}
+
+.bottom-elements {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    bottom: 3%;
+    position: absolute;
+}
+
+.deleted-account-message p {
+    transition: order 2s ease;
+    font-size: 23px;
+    color: red;
+}
+
+.recherche {
+    margin-left: 20px;
+}
+
+.affichage-list button,
+.recherche #recherche,
+.img button,
+a {
+    margin: 3px;
+    padding: 5px 10px;
+    background-color: var(--main-color);
+    font-size: 20px;
+    color: white;
+    border-radius: 10px;
+    transition: 0.5s;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.affichage-list button:hover,
+.recherche #recherche:hover,
+.img button:hover,
+a:hover {
+    background-color: var(--primary-color);
+}
+
+.h3>h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h3 {
+    margin: 0px;
+    padding: 20px 0px;
+    font-weight: 700;
+    font-size: 30px;
+}

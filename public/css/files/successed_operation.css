@@ -1,0 +1,10 @@
+.white-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-added {
+    font-size: 40px;
+    font-weight: 700;
+}

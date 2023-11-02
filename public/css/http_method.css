@@ -1,0 +1,11 @@
+.white-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.http-method {
+    font-size: 30px;
+    color: black;
+    font-weight: 800;
+}

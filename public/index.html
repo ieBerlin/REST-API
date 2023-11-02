@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normlize.css" />
+    <link rel="stylesheet" href="css/commun_file.css" />
+    <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+    <style>
+        .white-background {
+            min-height: calc(100vh - 40px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <div class="gradient-background">
+        <div class="white-background">
+            <div class="buttons">
+                <div class="etudiant-button">
+                    <a href="html-files/etudiants/etudiant_form.html">Etudiants</a>
+                </div>
+                <div class="enseignant-button" id="enseignant-button">
+                    <a href="html-files/enseignants/enseignant_form.html ">Enseignants</a
+            >
+          </div>
+          <div class="module-button">
+            <a id="link12" href="html-files/modules/module_form.html">Modules</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        document.getElementById("link12").addEventListener('hover', (event) => {
+            event.preventDefault();
+
+            console.log('ss')
+        })
+    </script>
+
+</body>
+
+</html>
