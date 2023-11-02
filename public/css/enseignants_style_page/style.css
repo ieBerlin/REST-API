@@ -3,6 +3,10 @@
     --primary-color: rgba(18, 159, 213, 255);
 }
 
+.white-background {
+    position: relative;
+}
+
 .input-group {
     width: 100%;
     display: flex;
@@ -35,7 +39,6 @@ a {
     right: 0px;
     top: 0px;
     display: flex;
-    margin: 20px;
 }
 
 .bottom-elements {

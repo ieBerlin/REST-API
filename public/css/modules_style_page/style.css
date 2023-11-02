@@ -3,6 +3,11 @@
     --primary-color: rgba(18, 159, 213, 255);
 }
 
+.white-background {
+    min-height: 0px;
+    height: calc(100vh - 45px);
+}
+
 .input-group {
     width: 100%;
     display: flex;

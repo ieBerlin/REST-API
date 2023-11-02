@@ -1,7 +1,7 @@
 function rechercheEtudiant() {
     const id = document.getElementById("numero").value;
     if (id) {
-        fetch(`../../back-end/fetch-page/etudiant.php?id=${id}`).then(
+        fetch(`href`).then(
                 (response) => {
                     const data = response.json();
                     return data;

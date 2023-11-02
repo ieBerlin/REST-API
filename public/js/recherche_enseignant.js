@@ -2,7 +2,7 @@ function rechercheEnseignant() {
 
     const id = document.getElementById("numero").value;
     if (id) {
-        fetch(`../../back-end/fetch-page/enseignant.php?id=${id}`)
+        fetch(`href`)
             .then((response) => {
                 const data = response.json();
                 return data;
