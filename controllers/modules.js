@@ -1,8 +1,9 @@
 const pool = require('../db/connect');
-const afficherLesEtudiants = (req, res) => {
+
+const afficherLesModules = (req, res) => {
     pool.getConnection((err, connection) => {
         if (err) throw err;
-        connection.query('SELECT * FROM etudiants', (err, data) => {
+        connection.query('SELECT * FROM modules', (err, data) => {
             if (err)
                 return res.status(500).json({ message: `Error occured`, success: false });
             const result = data;
@@ -14,11 +15,11 @@ const afficherLesEtudiants = (req, res) => {
         connection.release();
     })
 }
-const rechercheEtudiant = (req, res) => {
+const rechercheModule = (req, res) => {
     const { id: id } = req.params;
     pool.getConnection((err, connection) => {
         if (err) throw err;
-        connection.query('SELECT * FROM etudiants WHERE id = ?', [id], (err, data) => {
+        connection.query('SELECT * FROM modules WHERE id = ?', [id], (err, data) => {
             if (err)
                 return res.status(500).json({ message: `Error occured`, success: false });
             const result = data[0];
@@ -30,11 +31,10 @@ const rechercheEtudiant = (req, res) => {
         connection.release();
     })
 }
-const enregistrerEtudiant = (req, res) => {
-
-    const { civilite, nom_prenom, adresse, no_postal, localite, pays, platformes, applications, filiere, image } = req.body;
-    const sql = 'INSERT INTO etudiants(civilite, nom_prenom,adresse, no_postal, localite, pays, platformes, applications, filiere, image) VALUES (?,?,?,?,?,?,?,?,?,?)';
-    const values = [civilite, nom_prenom, adresse, no_postal, localite, pays, platformes, applications, filiere, image];
+const enregistrerModule = (req, res) => {
+    const { code_module, designation_module, coefficient, volume_horaire, filiere } = req.body;
+    const sql = 'INSERT INTO modules(code_module,designation_module,coefficient,volume_horaire,filiere) VALUES (?,?,?,?,?)';
+    const values = [code_module, designation_module, coefficient, volume_horaire, filiere];
     pool.getConnection((err, connection) => {
         if (err) throw err;
         connection.query(sql, values, (err, data) => {
@@ -45,12 +45,13 @@ const enregistrerEtudiant = (req, res) => {
         connection.release();
     })
 }
-const modifierEtudiant = (req, res) => {
+
+const modifierModule = (req, res) => {
 
     const { id: id } = req.params;
-    const { civilite, nom_prenom, adresse, no_postal, localite, pays, platformes, applications, filiere, image } = req.body;
-    const sql = 'UPDATE etudiants SET civilite = ?, nom_prenom= ?, adresse= ?, no_postal= ?, localite = ?, pays = ?, platformes = ?, applications = ?, filiere = ?, image = ? WHERE id = ?';
-    const values = [civilite, nom_prenom, adresse, no_postal, localite, pays, platformes, applications, filiere, image, id];
+    const { code_module, designation_module, coefficient, volume_horaire, filiere } = req.body;
+    const sql = 'UPDATE modules SET code_module = ?, designation_module= ?, coefficient= ?, volume_horaire= ?, filiere = ?WHERE id = ?';
+    const values = [code_module, designation_module, coefficient, volume_horaire, filiere, id];
     pool.getConnection((err, connection) => {
         if (err) throw err;
         connection.query(sql, values, (err, data) => {
@@ -63,12 +64,12 @@ const modifierEtudiant = (req, res) => {
         });
     })
 }
-const supprimerEtudiant = (req, res) => {
+const supprimerModule = (req, res) => {
 
     const { id: id } = req.params;
     pool.getConnection((err, connection) => {
         if (err) throw err;
-        connection.query('DELETE FROM etudiants WHERE id = ?', [id], (err, data) => {
+        connection.query('DELETE FROM modules WHERE id = ?', [id], (err, data) => {
             if (err)
                 return res.status(500).json({ success: false });
             if (!data.affectedRows)
@@ -78,10 +79,11 @@ const supprimerEtudiant = (req, res) => {
         connection.release();
     })
 }
+
 module.exports = {
-    rechercheEtudiant,
-    supprimerEtudiant,
-    modifierEtudiant,
-    enregistrerEtudiant,
-    afficherLesEtudiants
+    rechercheModule,
+    supprimerModule,
+    modifierModule,
+    enregistrerModule,
+    afficherLesModules
 }
