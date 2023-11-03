@@ -4,7 +4,7 @@ const etudiantsRoute = require('./routes/etudiants');
 const enseignantsRoute = require('./routes/enseignants');
 const moduleRoute = require('./routes/modules');
 const bulletinRoute = require('./routes/bulletins');
-const port = 3000;
+const port = 3000
 
 //  middlewares:
 app.use(express.static('./public'));
