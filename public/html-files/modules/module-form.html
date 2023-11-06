@@ -40,7 +40,7 @@
                 </div>
                 <div class="input-group">
                     <label>Volume horaire:</label>
-                    <input type="text" placeholder="Volumne horaire" required id="volumne-horaire" name="volumne-horaire" />
+                    <input type="text" placeholder="Volume horaire" required id="volume-horaire" name="volume-horaire" />
                 </div>
 
                 <div class="input-group">
@@ -61,21 +61,25 @@
 
                 <div class="bottom-elements">
                     <div class="deleted-account-message" hidden>
-                        <p>Utilisateur non trouvé !</p>
+                        <p>Module non trouvé !</p>
                     </div>
                     <div class="affichage-list">
-                        <button type="submit" name="enregistrer-module">
+                        <button type="button" id="enregistrer-module" name="enregistrer-module">
                 Enregistrer
               </button>
-                        <button type="submit" name="modifier-module">Modifier</button>
-                        <button type="submit" name="supprimer-module">Supprimer</button>
-                        <a id="affichage-list-module" href="href">Affichage List</a
+                        <button type="button" id="modifier-module" name="modifier-module">Modifier</button>
+                        <button type="button" id="supprimer-module" name="supprimer-module">Supprimer</button>
+                        <a id="affichage-list-module" href="./afficher-list.html">Affichage List</a
               >
             </div>
           </div>
         </form>
       </div>
     </div>
-    <script src="../../js/recherche_module.js"></script>
+    <script src="../../js/recherche/recherche_module.js"></script>
+    <script src="../../js/save/save-module.js"></script>
+<script src="../../js/update/update-module.js"></script>
+<script src="../../js/delete/delete-module.js"></script>
+
   </body>
 </html>

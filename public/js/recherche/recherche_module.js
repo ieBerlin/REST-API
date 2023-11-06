@@ -14,7 +14,7 @@ async function rechercheModule() {
                 document.getElementById("code-module").value = data["code_module"];
                 document.getElementById("designation-module").value = data["designation_module"];
                 document.getElementById("coefficient").value = data["coefficient"];
-                document.getElementById("volumne-horaire").value = data["volume_horaire"];
+                document.getElementById("volume-horaire").value = data["volume_horaire"];
                 document.getElementById("filiere").value = data["filiere"];
                 return;
             }

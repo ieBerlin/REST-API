@@ -14,7 +14,6 @@ async function rechercheEtudiant() {
                 document.querySelector(`.civilite #${data["civilite"]}`).checked = true;
                 document.getElementById("nom-prenom").value = data["nom_prenom"];
                 document.getElementById("adresse").value = data["adresse"];
-                document.getElementsByTagName("textarea")[0].value = data["adresse"];
                 document.getElementById("no-postal").value = data["no_postal"];
                 document.getElementById("localite").value = data["localite"];
                 document.getElementById("pays").value = data["pays"];

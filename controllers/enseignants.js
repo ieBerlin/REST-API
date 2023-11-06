@@ -31,14 +31,22 @@ const rechercheEnseignant = (req, res) => {
     })
 }
 const enregistrerEnseignant = (req, res) => {
-    const { civilite, nom_prenom, adresse, date_naissance, lieu_naissance, pays, grade, specialite, image, nationalite } = req.body;
-    const sql = 'INSERT INTO enseignants(civilite, nom_prenom, adresse, date_naissance, lieu_naissance, pays, grade, specialite, image, nationalite) VALUES (?,?,?,?,?,?,?,?,?,?)';
-    const values = [civilite, nom_prenom, adresse, date_naissance, lieu_naissance, pays, grade, specialite, image, nationalite];
+    const { civilite, nom_prenom, adresse, date_naissance, lieu_naissance, pays, grade, specialite, image } = req.body;
+    const sql = 'INSERT INTO enseignants(civilite, nom_prenom, adresse, date_naissance, lieu_naissance, pays, grade, specialite, image) VALUES (?,?,?,?,?,?,?,?,?)';
+    const values = [civilite, nom_prenom, adresse, date_naissance, lieu_naissance, pays, grade, specialite, image];
     pool.getConnection((err, connection) => {
-        if (err) throw err;
+        if (err) {
+            console.log(err)
+
+
+            throw err;
+        }
         connection.query(sql, values, (err, data) => {
-            if (err)
+            if (err) {
+                console.log(err)
                 return res.status(500).json({ message: `Error occured`, success: false });
+
+            }
             res.status(201).json({ success: true });
         });
         connection.release();
@@ -46,9 +54,9 @@ const enregistrerEnseignant = (req, res) => {
 }
 const modifierEnseignant = (req, res) => {
     const { id: id } = req.params;
-    const { civilite, nom_prenom, adresse, date_naissance, lieu_naissance, pays, grade, specialite, image, nationalite } = req.body;
-    const sql = 'UPDATE enseignants SET civilite = ?, nom_prenom= ?, adresse= ?, date_naissance = ?, lieu_naissance = ?, pays = ?, grade = ?, specialite = ?, image = ?, nationalite = ? WHERE id = ?';
-    const values = [civilite, nom_prenom, adresse, date_naissance, lieu_naissance, pays, grade, specialite, image, nationalite, id];
+    const { civilite, nom_prenom, adresse, date_naissance, lieu_naissance, pays, grade, specialite, image } = req.body;
+    const sql = 'UPDATE enseignants SET civilite = ?, nom_prenom= ?, adresse= ?, date_naissance = ?, lieu_naissance = ?, pays = ?, grade = ?, specialite = ?, image = ? WHERE id = ?';
+    const values = [civilite, nom_prenom, adresse, date_naissance, lieu_naissance, pays, grade, specialite, image, id];
     pool.getConnection((err, connection) => {
         if (err) throw err;
         connection.query(sql, values, (err, data) => {

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/normlize.css" />
+    <link rel="stylesheet" href="../../css/commun_file.css">
+    <link rel="stylesheet" href="../../css/enseignants_style_page/affichage-list.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div class="gradient-background">
+        <div class="white-background">
+            <style>
+                .white-background {
+                    box-sizing: content-box;
+                    height: 100%;
+                    margin: 4%;
+                }
+            </style>
+            <div class="table">
+
+                <h1>Les informations d'enseignant :</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Civilité</th>
+                            <th>Nom et Prénom</th>
+                            <th>Adresse</th>
+                            <th>Date De Naissance</th>
+                            <th>Lieu De Naissance</th>
+                            <th>Pays</th>
+                            <th>grade</th>
+                            <th>specialite</th>
+                            <th>Image</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- table-body -->
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload = () => {
+            const baseURL = 'http://localhost:3000/api/enseignant/';
+            axios.get(baseURL).then((response) => {
+                const data = response.data;
+                // Get the table body element
+                const tableBody = document.getElementById('table-body');
+
+                // Clear any existing table rows
+                tableBody.innerHTML = '';
+                const imagesURI = 'http://localhost:3000/images/';
+
+                // Loop through the data and create table rows
+                data.forEach(item => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                            <td>${item.id}</td>
+                            <td>${item.civilite}</td>
+                            <td>${item.nom_prenom}</td>
+                            <td>${item.adresse}</td>
+                            <td>${item.date_naissance}</td>
+                            <td>${item.lieu_naissance}</td>
+                            <td>${item.pays}</td>
+                            <td>${item.grade}</td>
+                            <td>${item.specialite}</td>
+                            <td><img width=50px height=50px src="${imagesURI}${item.image}" alt="Image"></td>
+                        `;
+                    tableBody.appendChild(row);
+                });
+
+            }).catch((err) => {
+                console.log(err);
+                document.write('<h1>Error occured</h1>')
+            });
+        }
+    </script>
+</body>
+
+</html>
