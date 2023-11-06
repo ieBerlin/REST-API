@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../../css/normlize.css" />
     <link rel="stylesheet" href="../../css/commun_file.css" />
     <link rel="stylesheet" href="../../css/etudiants_style_page/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="../../css/bulletin/disabled.css">
 </head>
 
 <body>
@@ -22,7 +24,7 @@
                     <label>Numero : </label>
                     <input id="numero" value="" type="number" name="numero" placeholder="Enter numero d'utilisateur" />
                     <div class="recherche">
-                        <input type="button" onclick="rechercheEtudiant()" id="recherche" value="Recherche" />
+                        <input type="button" onclick="recherchebulletin()" id="recherche" value="Recherche" />
                     </div>
                 </div>
 
@@ -59,21 +61,17 @@
                 </div>
                 <div class="input-group">
                     <label>Module :</label>
-                    <select id="module" name="module">
-              <option value="bdd">Base de donnees</option>
-              <option value="architecture">Architecture</option>
-              <option value="algorithme">Algorithme</option>
-              <option value="paw">Programmation Avances Web</option>
+                    <select id="module" onchange="moduleChangeEvent()" name="module">
             </select>
                 </div>
 
                 <div class="input-group">
                     <label>Code module:</label>
-                    <input type="text" placeholder="Saisiz votre code module" required id="code-module" name="code-module" />
+                    <input type="text" class="disabled" placeholder="Saisiz votre code module" required id="code-module" name="code-module" />
                 </div>
                 <div class="input-group">
                     <label>coefficient : </label>
-                    <input id="coefficient" value="" type="number" name="coefficient" placeholder="Enter coefficient" />
+                    <input id="coefficient" class="disabled" type="number" name="coefficient" placeholder="Enter coefficient" />
                 </div>
 
                 <div class="input-group">
@@ -87,11 +85,11 @@
                         <p>Bulletin non trouvé !</p>
                     </div>
                     <div class="affichage-list">
-                        <button type="button" name="enregistrer-etudiant">
+                        <button type="button" name="enregistrer-bulletin">
                 Enregistrer
               </button>
-                        <button type="button" name="modifier-etudiant">Modifier</button>
-                        <button type="button" name="supprimer-etudiant">Supprimer</button>
+                        <button type="button" name="modifier-bulletin">Modifier</button>
+                        <button type="button" name="supprimer-bulletin">Supprimer</button>
 
                     </div>
                 </div>
@@ -103,6 +101,10 @@
             </form>
         </div>
     </div>
+    <script src="../../js/bulletin/recherche.js"></script>
+    <script src="../../js/bulletin/modules-list.js">
+    </script>
+    <script src="../../js/bulletin/module-change.js"></script>
 </body>
 
 </html>

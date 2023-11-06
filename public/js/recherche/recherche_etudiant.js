@@ -54,11 +54,13 @@ async function rechercheEtudiant() {
                     }
                 }
                 return;
+
             }
         })
     } catch (err) {
         if (err.message === 'Request failed with status code 404')
             document.querySelector(".deleted-account-message").hidden = false;
+        console.log(err);
     }
 
 
