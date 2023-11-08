@@ -46,7 +46,8 @@
     position: absolute;
 }
 
-.deleted-account-message p {
+.deleted-account-message p,
+.note-state p {
     transition: order 2s ease;
     font-size: 23px;
     color: red;

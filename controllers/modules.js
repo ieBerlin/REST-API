@@ -1,5 +1,20 @@
 const pool = require('../db/connect');
-
+const afficherLesModulesSelonLaFiliere = (req, res) => {
+    const { filiere: filiere } = req.params;
+    pool.getConnection((err, connection) => {
+        if (err) throw err;
+        connection.query('SELECT * FROM modules WHERE filiere = ?', [filiere], (err, data) => {
+            if (err)
+                return res.status(500).json({ message: `Error occured`, success: false });
+            const result = data;
+            if (!result) {
+                return res.status(404).json({ message: `No data found`, success: false });
+            }
+            res.status(200).send(result);
+        });
+        connection.release();
+    })
+}
 const afficherLesModules = (req, res) => {
     pool.getConnection((err, connection) => {
         if (err) throw err;
@@ -98,6 +113,7 @@ const rechercheModuleName = (req, res) => {
     })
 }
 module.exports = {
+    afficherLesModulesSelonLaFiliere,
     rechercheModuleName,
     rechercheModule,
     supprimerModule,

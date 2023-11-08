@@ -1,6 +1,7 @@
 const saveButton = document.getElementById('enregistrer-enseignant');
 saveButton.addEventListener('click', (event) => {
     event.preventDefault();
+
     const radioButtons = document.getElementsByName("civilite");
     let civilite = undefined;
     for (let i = 0; i < radioButtons.length; i++) {
@@ -16,7 +17,10 @@ saveButton.addEventListener('click', (event) => {
     const pays = document.getElementById("pays").value
     const grade = document.getElementById("grade").value
     const specialite = document.getElementById("specialite").value
-    const image = document.getElementById('image-input').value
+    const imageOriginPath = document.getElementById('image-input').value;
+    const start = imageOriginPath.lastIndexOf('\\') + 1
+    const newString = imageOriginPath.slice(start, imageOriginPath.length)
+    const image = newString;
 
     const data = {
         civilite: civilite,

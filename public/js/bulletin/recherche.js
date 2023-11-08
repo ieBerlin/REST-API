@@ -13,6 +13,7 @@ async function recherchebulletin() {
                 document.querySelector(`.civilite #${data["civilite"]}`).checked = true;
                 document.getElementById("nom-prenom").value = data["nom_prenom"];
                 document.getElementById("filiere").value = data["filiere"];
+                moduleChangerSelonFiliere();
                 return;
             }
         })

@@ -22,7 +22,7 @@
             <form>
                 <div class="input-group">
                     <label>Numero : </label>
-                    <input id="numero" value="" type="number" name="numero" placeholder="Enter numero d'utilisateur" />
+                    <input id="numero" type="number" name="numero" placeholder="Enter numero d'utilisateur" />
                     <div class="recherche">
                         <input type="button" onclick="recherchebulletin()" id="recherche" value="Recherche" />
                     </div>
@@ -84,6 +84,9 @@
                     <div class="deleted-account-message" hidden>
                         <p>Étudiant inexistant!</p>
                     </div>
+                    <div class="note-state">
+                        <p></p>
+                    </div>
                     <div class="affichage-list">
                         <button type="button" id="enregistrer-bulletin" name="enregistrer-bulletin">
                 Enregistrer
@@ -106,6 +109,8 @@
     </script>
     <script src="../../js/bulletin/module-change.js"></script>
     <script src="../../js/bulletin/save-bulletin.js"></script>
+    <script src="../../js/bulletin/crawling-note-state.js"></script>
+    <script src="../../js/bulletin/supprimer.js"></script>
 </body>
 
 </html>
