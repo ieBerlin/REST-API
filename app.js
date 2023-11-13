@@ -16,8 +16,6 @@ app.use('/api/etudiant', etudiantsRoute)
 app.use('/api/module', moduleRoute)
 app.use('/api/bulletin', bulletinRoute)
 
-
-
 // start app
 app.listen(port, () => {
     console.log(`Nodejs is listening on port : ${port}`);

@@ -16,6 +16,7 @@ const afficherLesBulletins = (req, res) => {
 }
 
 const rechercheBulletin = (req, res) => {
+
     const { id: id } = req.params;
     pool.getConnection((err, connection) => {
         if (err) throw err;
