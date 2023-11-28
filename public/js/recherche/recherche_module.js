@@ -1,7 +1,7 @@
 async function rechercheModule() {
     const id = document.getElementById("numero").value;
     const url = 'http://localhost:3000';
-    const moduleAPI = '/api/module/';
+    const moduleAPI = '/api/module/name/';
     const baseURL = url.concat(moduleAPI, id)
 
     try {

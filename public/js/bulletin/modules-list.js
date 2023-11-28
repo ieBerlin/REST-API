@@ -5,7 +5,7 @@ filiere.addEventListener('change', () => {
 });
 
 function moduleChangerSelonFiliere() {
-    const baseURL = `http://localhost:3000/api/module/${filiere.value}`;
+    const baseURL = `http://localhost:3000/api/module/filiere/${filiere.value}`;
     const moduleSelect = document.getElementById('module');
     axios.get(baseURL).then(response => {
         if (response.status === 200) {

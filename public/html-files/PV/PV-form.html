@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/normlize.css" />
+    <link rel="stylesheet" href="../../css/commun_file.css" />
+    <link rel="stylesheet" href="../../css/etudiants_style_page/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="../../css/bulletin/disabled.css">
+    <link rel="stylesheet" href="../../css/pv/style.css">
+</head>
+
+<body>
+    <div class="gradient-background">
+        <div class="white-background">
+            <div id="cadre">
+
+
+                <div class="h3">
+                    <h3>Formulaire de PV</h3>
+                </div>
+                <div id="filiere">
+
+                </div>
+                <form>
+                    <div class="input-group">
+                        <label>Numero : </label>
+                        <input id="numero" type="number" name="numero" placeholder="Enter numero d'utilisateur" />
+                        <div class="recherche">
+                            <input type="button" onclick="recherchePV()" id="recherche" value="Recherche" />
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Nom / Prenom :</label>
+                        <input type="text" placeholder="Saisiz votre nom et prenom" required id="nom-prenom" name="nom-prenom" />
+                    </div>
+                    <div class="input-group">
+                        <label class="message-afficher">La moyenne d'etudiant :</label>
+                        <div id="moyenne-etudiant"></div>
+
+                    </div>
+
+                    <div class="bottom-elements">
+                        <div class="deleted-account-message" hidden>
+                            <p>Étudiant inexistant!</p>
+                        </div>
+                        <div class="note-state">
+                            <p></p>
+                        </div>
+                        <div class="affichage-list">
+
+                            <a id="affichage-list-bulletin" href="">Affichage List</a>
+                        </div>
+                    </div>
+                </form>
+                <div id="table-module" hidden>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nom module</th>
+                                <th>Code module </th>
+                                <th>note</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div id="error-occured" hidden style="color: red; text-align:center;">
+                    Error Occured
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/pv/recherche-etudiant.js"></script>
+    <script src="../../js/pv/recherche-pv-etudiant.js"></script>
+    <script src="../../js/pv/afficher-list-bulletin-etudiant.js"></script>
+    <script src="../../js/pv/afficher-les-notes-etudiant.js"></script>
+</body>
+
+</html>

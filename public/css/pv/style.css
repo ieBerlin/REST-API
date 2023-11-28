@@ -1,0 +1,11 @@
+#cadre {
+    padding: 60px 30px;
+    border: solid black 2px;
+    font-size: 20px;
+}
+
+th,
+td {
+    padding: 3px 7px;
+    border: solid black 2px;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/normlize.css" />
+    <link rel="stylesheet" href="../../css/commun_file.css">
+    <link rel="stylesheet" href="../../css/modules_style_page/affichage-list.css">
+    <link rel="stylesheet" href="../../css/pv/list.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div class="gradient-background">
+        <div class="white-background">
+            <style>
+                .white-background {
+                    box-sizing: content-box;
+                    height: 100%;
+                    margin: 4%;
+                }
+            </style>
+            <div class="table">
+
+                <h1>Les informations de pv :</h1>
+                <table id="bulletin-table">
+                    <thead>
+                        <tr>
+                            <th id="nom-etudiant">Nom Prenom</th>
+                            <th id="filiere-cell">Filière</th>
+                            <th id="moyenne">Moyenne Generale</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                    </tbody>
+                </table>
+
+            </div>
+            <div id="la-moyenne" style="display: grid; flex-direction: column; justify-content: center; gap: 20px;">
+                <div id="moyenne-generale"></div>
+                <div id="moyenne-max"></div>
+                <div id="moyenne-min"></div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</body>
+<script src="../../js/pv/afficher-list.js"></script>
+
+</html>

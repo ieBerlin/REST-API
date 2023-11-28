@@ -95,15 +95,15 @@ const supprimerModule = (req, res) => {
     })
 }
 const rechercheModuleName = (req, res) => {
-    const { designation: name } = req.params;
+    const { designation: id } = req.params;
     pool.getConnection((err, connection) => {
         if (err) throw err;
-        connection.query('SELECT * FROM modules WHERE designation_module = ?', [name], (err, data) => {
+        connection.query('SELECT * FROM modules WHERE id = ?', [id], (err, data) => {
             if (err)
                 return res.status(500).json({ message: `Error occured`, success: false });
             const result = data[0];
             if (!result) {
-                console.log('hhh')
+
                 return res.status(404).json({ message: `No data found`, success: false });
             }
             res.status(200).send(result);
