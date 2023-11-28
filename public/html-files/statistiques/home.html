@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="../../css/normlize.css" />
     <link rel="stylesheet" href="../../css/commun_file.css" />
     <link rel="stylesheet" href="../../css/etudiants_style_page/style.css" />
+    <link rel="stylesheet" href="../../css/statistiques/home.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="../../css/bulletin/disabled.css">
+    <link rel="stylesheet" href="../../css/statistiques/histogram.css">
+    <link rel="stylesheet" href="../../css/statistiques/camembert.css">
 </head>
 
 <body>
@@ -19,19 +22,20 @@
             <div class="h3">
                 <h3>Statistiques</h3>
             </div>
-            <form>
-
-
-
-
-
-
-            </form>
+            <div class="graphiques">
+                <div class="camembert" id="camembert">
+                    <h3>Camembert Graphique </h3>
+                    <div class="circle" id="circle"></div>
+                </div>
+                <div class="histogramme" id="histogramme">
+                    <h3>Histogramme Graphique </h3>
+                </div>
+            </div>
         </div>
     </div>
-    <script src="../../js/pv/recherche-etudiant.js"></script>
-    <script src="../../js/pv/recherche-pv-etudiant.js"></script>
-    <script src="../../js/pv/afficher-list-bulletin-etudiant.js"></script>
+    <script src="../../js/statistiques/data.js"></script>
+    <script src="../../js/statistiques/histogram.js"></script>
+    <script src="../../js/statistiques/comembert.js"></script>
 </body>
 
 </html>
