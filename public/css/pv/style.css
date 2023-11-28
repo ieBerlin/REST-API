@@ -1,3 +1,8 @@
+:root {
+    --main-color: rgba(81, 45, 207, 255);
+    --primary-color: rgba(18, 159, 213, 255);
+}
+
 #cadre {
     position: relative;
     padding: 60px 30px;
@@ -10,4 +15,54 @@ th,
 td {
     padding: 3px 7px;
     border: solid black 2px;
+}
+
+#print-button {
+    display: flex;
+    justify-content: center;
+}
+
+#print-button button {
+    margin: 3px;
+    padding: 5px 10px;
+    background-color: var(--main-color);
+    font-size: 20px;
+    color: white;
+    border-radius: 10px;
+    transition: 0.5s;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#print-button button:hover {
+    background-color: var(--primary-color);
+}
+
+#filiere {
+    font-size: 26px;
+    font-weight: 600;
+    margin-left: 20px;
+}
+
+label {
+    flex-basis: inherit !important;
+}
+
+.input-group {
+    margin: 20px 0px !important;
+}
+
+@media print {
+    .recherche,
+    #print-button,
+    .affichage-list {
+        display: none;
+    }
+    #table-module {
+        display: flex;
+        justify-content: center;
+    }
+    input {
+        border-bottom: 0px !important;
+    }
 }

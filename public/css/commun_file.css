@@ -14,9 +14,6 @@ html {
     width: 100vw;
     box-sizing: content-box;
     background-image: linear-gradient(var(--main-color), var(--primary-color));
-    /* display: flex; */
-    justify-content: center;
-    align-items: center;
 }
 
 .white-background {

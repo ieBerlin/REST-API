@@ -2,7 +2,7 @@ const pool = require('../db/connect');
 const afficherLesBulletins = (req, res) => {
     pool.getConnection((err, connection) => {
         if (err) throw err;
-        connection.query('SELECT * FROM notes', (err, data) => {
+        connection.query('SELECT * FROM notes ORDER BY num_etudiant ASC', (err, data) => {
             if (err)
                 return res.status(500).json({ message: `Error occured`, success: false });
             const result = data;

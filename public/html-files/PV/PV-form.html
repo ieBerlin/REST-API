@@ -20,8 +20,8 @@
             <div id="cadre">
 
 
-                <div class="h3">
-                    <h3>Formulaire de PV</h3>
+                <div class="h3 pv">
+                    <h3>PV d'etudiant</h3>
                 </div>
                 <div id="filiere">
 
@@ -39,7 +39,7 @@
                         <label>Nom / Prenom :</label>
                         <input type="text" placeholder="Saisiz votre nom et prenom" required id="nom-prenom" name="nom-prenom" />
                     </div>
-                    <div class="input-group">
+                    <div class="input-group la-moyenne-d-etudiant">
                         <label class="message-afficher">La moyenne d'etudiant :</label>
                         <div id="moyenne-etudiant"></div>
 
@@ -73,6 +73,9 @@
                     </table>
 
                 </div>
+                <div id="print-button">
+                    <button id="print">imprimerie</button>
+                </div>
                 <div id="error-occured" hidden style="color: red; text-align:center;">
                     Error Occured
                 </div>
@@ -83,6 +86,11 @@
     <script src="../../js/pv/recherche-pv-etudiant.js"></script>
     <script src="../../js/pv/afficher-list-bulletin-etudiant.js"></script>
     <script src="../../js/pv/afficher-les-notes-etudiant.js"></script>
+    <script>
+        document.getElementById('print').addEventListener('click', () => {
+            window.print()
+        });
+    </script>
 </body>
 
 </html>
