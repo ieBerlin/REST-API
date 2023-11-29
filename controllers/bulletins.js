@@ -66,7 +66,6 @@ const modifierBulletin = (req, res) => {
 const supprimerBulletin = (req, res) => {
     const { id: id } = req.params;
     const { module: module } = req.body;
-    console.log(module, id);
     pool.getConnection((err, connection) => {
         if (err) throw err;
         connection.query('UPDATE notes SET note = ? WHERE num_etudiant = ? AND nom_module = ?', ['', id, module], (err, data) => {

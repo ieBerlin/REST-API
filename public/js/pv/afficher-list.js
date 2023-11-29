@@ -59,9 +59,9 @@ window.onload = async() => {
 
             }
             const moyenneGa3 = moyenneGenerale / count;
-            document.getElementById('moyenne-generale').textContent = `La moyenne generale : ${moyenneGa3}`
-            document.getElementById('moyenne-max').textContent = `La moyenne max : ${moyenneMax}`
-            document.getElementById('moyenne-min').textContent = `La moyenne min : ${Math.min(...etudiantArray)}`
+            document.getElementById('moyenne-generale').textContent = `La moyenne generale : ${Number(moyenneGa3).toFixed(2)}`
+            document.getElementById('moyenne-max').textContent = `La moyenne max : ${Number(moyenneMax).toFixed(2)}`
+            document.getElementById('moyenne-min').textContent = `La moyenne min : ${Number(Math.min(...etudiantArray)).toFixed(2)}`
 
         }
     }).catch(err => console.log(err));
