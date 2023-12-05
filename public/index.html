@@ -1,51 +1,42 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/normlize.css" />
-    <link rel="stylesheet" href="css/commun_file.css" />
-    <link rel="stylesheet" href="css/index.css" />
+    <title>Slide Navbar</title>
+    <link rel="stylesheet" type="text/css" href="./css/authentification/style.css">
 </head>
 
 <body>
-    <style>
-        .white-background {
-            min-height: calc(100vh - 40px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
-    <div class="gradient-background">
-        <div class="white-background">
-            <div class="buttons">
-                <div class="etudiant-button">
-                    <a href="html-files/etudiants/etudiant-form.html">Etudiants</a>
-                </div>
-                <div class="enseignant-button" id="enseignant-button">
-                    <a href="html-files/enseignants/enseignant-form.html ">Enseignants</a
-            >
-          </div>
-          <div class="module-button">
-            <a href="html-files/modules/module-form.html">Modules</a>
-                </div>
-                <div class="bulletin-button">
-                    <a href="html-files/bulletins/bulletin-form.html">Bulletin</a>
-                </div>
-                <div class="PV-etudiant">
-                    <a href="html-files/PV/PV-form.html">PV</a>
-                </div>
-                <div class="statistiques">
-                    <a href="html-files/statistiques/home.html">Statistiques</a>
-                </div>
-            </div>
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
+
+        <div class="login">
+            <form id="login">
+                <label for="chk" aria-hidden="true">Login</label>
+                <input type="email" name="email" placeholder="Email" required="">
+                <input type="password" name="pswd" placeholder="Password" required="">
+                <button>Valider</button>
+                <button>Inscription</button>
+            </form>
         </div>
 
+        <div class="signup">
+            <form id="signup">
+                <label for="chk" aria-hidden="true">Sign up</label>
+                <input type="email" name="email" placeholder="Adresse Mail" required="">
+                <input type="password" name="pswd" placeholder="Mots de Passe" required="">
+                <div id="type-of-user-container">
+                    <select name="type-of-user" id="type-of-user">
+                    <option value="admin">Admin</option>
+                    <option value="user">User</option>
+                </select>
+                </div>
+                <button>Valider</button>
+            </form>
+        </div>
     </div>
+    <script defer src="./js/authentification/login.js"></script>
+    <script defer src="./js/authentification/signup.js"></script>
 </body>
 
 </html>
