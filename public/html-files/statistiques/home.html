@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="../../css/bulletin/disabled.css">
     <link rel="stylesheet" href="../../css/statistiques/histogram.css">
     <link rel="stylesheet" href="../../css/statistiques/camembert.css">
+    <link rel="stylesheet" href="../../css/statistiques/resultat/camembert.css">
+    <link rel="stylesheet" href="../../css/statistiques/resultat/histogram.css">
 </head>
 
 <body>
@@ -21,6 +23,7 @@
         <div class="white-background">
             <div class="h3">
                 <h3>Statistiques</h3>
+                <h4>Le Sex</h4>
             </div>
             <div class="graphiques">
                 <div class="camembert" id="camembert">
@@ -31,11 +34,32 @@
                     <h3>Histogramme Graphique </h3>
                 </div>
             </div>
+            <h4>La Resultat</h4>
+            <style>
+                h4 {
+                    text-align: center;
+                }
+            </style>
+            <div class="graphiques">
+                <div class="camembert camembert-plus" id="camembert-plus">
+                    <h3>Camembert Graphique </h3>
+                    <div class="circle" id="circle-resultat"></div>
+                </div>
+                <div class="histogramme histogramme-plus" id="histogramme-plus">
+                    <h3>Histogramme Graphique </h3>
+                </div>
+            </div>
+
         </div>
     </div>
+    <!-- sex  -->
     <script src="../../js/statistiques/data.js"></script>
     <script src="../../js/statistiques/histogram.js"></script>
     <script src="../../js/statistiques/comembert.js"></script>
+    <!-- resultat -->
+    <script src="../../js/statistiques/resultat/data.js"></script>
+    <script src="../../js/statistiques/resultat/histogram.js"></script>
+    <script src="../../js/statistiques/resultat/comembert.js"></script>
 </body>
 
 </html>

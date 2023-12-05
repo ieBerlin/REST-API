@@ -43,7 +43,31 @@
                 <div id="moyenne-max"></div>
                 <div id="moyenne-min"></div>
             </div>
-
+            <div id="print-button">
+                <button id="print">imprimerie</button>
+                <style>
+                    #print-button {
+                        display: flex;
+                        justify-content: center;
+                    }
+                    
+                    #print-button button {
+                        margin: 30px;
+                        padding: 5px 10px;
+                        background-color: var(--main-color);
+                        font-size: 20px;
+                        color: white;
+                        border-radius: 10px;
+                        transition: 0.5s;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+                    
+                    #print-button button:hover {
+                        background-color: var(--primary-color);
+                    }
+                </style>
+            </div>
 
         </div>
 
@@ -51,5 +75,10 @@
 
 </body>
 <script src="../../js/pv/afficher-list.js"></script>
+<script>
+    document.getElementById('print').addEventListener('click', () => {
+        window.print()
+    });
+</script>
 
 </html>
