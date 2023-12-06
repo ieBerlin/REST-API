@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2023 at 11:38 AM
+-- Generation Time: Dec 06, 2023 at 01:06 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -179,11 +179,11 @@ INSERT INTO `notes` (`num_etudiant`, `filiere`, `nom_module`, `code_module`, `co
 (1, 'tc', 'Database Management Systems', 0, 2, 20),
 (1, 'tc', 'Computer Networks', 0, 3, 17),
 (1, 'tc', 'Software Engineering', 0, 3, 16),
-(2, 'tc', 'Introduction to Programming', 0, 3, 18),
-(2, 'tc', 'Data Structures and Algorithms', 0, 3, 19),
+(2, 'tc', 'Introduction to Programming', 0, 3, 1),
+(2, 'tc', 'Data Structures and Algorithms', 0, 3, 2),
 (2, 'tc', 'Database Management Systems', 0, 2, 20),
-(2, 'tc', 'Computer Networks', 0, 3, 17),
-(2, 'tc', 'Software Engineering', 0, 3, 16),
+(2, 'tc', 'Computer Networks', 0, 3, 4),
+(2, 'tc', 'Software Engineering', 0, 3, 3),
 (3, '2sc', 'Object-Oriented Programming', 2, 2, 19),
 (3, '2sc', 'Web Development', 2, 4, 20),
 (3, '2sc', 'Database Design and Implementa', 2, 2, 18),
@@ -194,11 +194,11 @@ INSERT INTO `notes` (`num_etudiant`, `filiere`, `nom_module`, `code_module`, `co
 (4, '2sc', 'Database Design and Implementa', 2, 2, 18),
 (4, '2sc', 'Data Structures and Algorithms', 2, 4, 16),
 (4, '2sc', 'Operating Systems and System P', 2, 2, 17),
-(5, '3isil', 'Artificial Intelligence', 3, 3, 18),
-(5, '3isil', 'Computer Graphics', 3, 3, 19),
-(5, '3isil', 'Information Security', 3, 3, 20),
+(5, '3isil', 'Artificial Intelligence', 3, 3, 1),
+(5, '3isil', 'Computer Graphics', 3, 3, 0),
+(5, '3isil', 'Information Security', 3, 3, 0),
 (5, '3isil', 'Distributed Systems', 3, 3, 17),
-(5, '3isil', 'Machine Learning', 3, 3, 16),
+(5, '3isil', 'Machine Learning', 3, 3, 0),
 (6, '3isil', 'Artificial Intelligence', 3, 3, 18),
 (6, '3isil', 'Computer Graphics', 3, 3, 19),
 (6, '3isil', 'Information Security', 3, 3, 20),
@@ -255,6 +255,42 @@ INSERT INTO `notes` (`num_etudiant`, `filiere`, `nom_module`, `code_module`, `co
 (16, 'm2rssi', 'Wireless Sensor Networks', 0, 4, 16),
 (16, 'm2rssi', 'Digital Signal Processing', 0, 2, 17);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(10) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `role` varchar(255) NOT NULL,
+  `mdp` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `email`, `role`, `mdp`) VALUES
+(1, 'ieberlin@gmail.com', 'user', '12345678'),
+(2, 'zarhouni@gmail.com', 'Admin', 'zarhouni@gmail.com'),
+(4, 'zarhouni@gmail.com', 'admin', '12121212'),
+(5, 'zarhouni@gmail.com', 'admin', '121212122'),
+(6, 'zarhouni@gmail.com', 'admin', '121212'),
+(7, 'zarhouni@gmail.com', 'admin', '12312'),
+(8, 'd53cov@gmail.com', 'admin', '12312312'),
+(9, 'd53cov@gmail.com', 'admin', '12312312'),
+(10, 'Taibi@gmail.com', 'admin', 'Taibi@gmail.com'),
+(11, 'Tai3bi@gmail.com', 'admin', 'Taibi@gmail.com'),
+(12, 'Tai3sbi@gmail.com', 'admin', 'Tai3bi@gmail.com'),
+(13, 'asdas@gmail.com', 'admin', 'asdas@gmail.com'),
+(14, 'asdas@gmail.com', 'admin', 'asdas@gmail.com'),
+(15, 'asdas@gmail.com', 'admin', 'asdas@gmail.com'),
+(16, 'asdas@gmail.com', 'user', 'asdas@gmail.com'),
+(17, 'asdas@gmail.com', 'user', 'asdas@gmail.com'),
+(18, 'asdas@gmail.com', 'user', 'asdas@gmail.com');
+
 --
 -- Indexes for dumped tables
 --
@@ -278,6 +314,12 @@ ALTER TABLE `modules`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -298,6 +340,12 @@ ALTER TABLE `etudiants`
 --
 ALTER TABLE `modules`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
