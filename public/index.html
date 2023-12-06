@@ -4,6 +4,7 @@
 <head>
     <title>Slide Navbar</title>
     <link rel="stylesheet" type="text/css" href="./css/authentification/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -15,8 +16,8 @@
                 <label for="chk" aria-hidden="true">Login</label>
                 <input type="email" name="email" placeholder="Email" required="">
                 <input type="password" name="pswd" placeholder="Password" required="">
+                <div hidden id="etudiant-inexistant" style="text-align: center; margin: 20px auto; padding: 4px 20px; color: red;background-color: white;font-weight: 600; width: calc(60% - 40px)">Etudiant inxistant</div>
                 <button>Valider</button>
-                <button>Inscription</button>
             </form>
         </div>
 
@@ -25,6 +26,7 @@
                 <label for="chk" aria-hidden="true">Sign up</label>
                 <input type="email" name="email" placeholder="Adresse Mail" required="">
                 <input type="password" name="pswd" placeholder="Mots de Passe" required="">
+                <div id="created-user-div"></div>
                 <div id="type-of-user-container">
                     <select name="type-of-user" id="type-of-user">
                     <option value="admin">Admin</option>

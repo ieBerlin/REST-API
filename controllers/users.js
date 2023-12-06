@@ -49,12 +49,12 @@ const deleteUser = (req, res) => {
 }
 const rechercheUser = (req, res) => {
     const { email, password } = req.params;
-    console.log(email, password);
     pool.getConnection((err, connection) => {
         if (err) throw err;
         const sql = `SELECT * FROM user WHERE email = '${email}' AND mdp = '${password}'`;
         console.log(sql);
         connection.query(sql, (err, data) => {
+            console.log(data);
             if (err)
                 return res.status(500).json({ message: `Error occured`, success: false });
             const result = data[0];
